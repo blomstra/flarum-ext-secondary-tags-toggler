@@ -66,35 +66,37 @@ export default class ToggleableTagLabel extends Component<IAttrs> {
 
     return (
       <span {...domAttrs}>
-        <input
-          disabled={this.attrs.disabled}
-          onchange={async (e: InputEvent): Promise<void> => {
-            this.attrs.onBeginChange();
-
-            // Tag ID to Tag map
-            const discussionTags = (discussion.tags() as any[]).reduce((acc, tag) => {
-              acc[tag.id()] = tag;
-              return acc;
-            }, {} as Record<string, any>);
-
-            if ((e.target as HTMLInputElement).checked) {
-              discussionTags[tagModel.id()] = tagModel;
-            } else {
-              delete discussionTags[tagModel.id()];
-            }
-
-            await discussion.save({ relationships: { tags: Object.values(discussionTags) } });
-
-            this.attrs.onChangeComplete();
-          }}
-          id={uniqueId}
-          type="checkbox"
-          className="TagLabel-toggle"
-          checked={isTagEnabled}
-        />
-
         <label for={uniqueId} className="TagLabel-text">
-          {tagModel && tagModel.icon() && tagIcon(tagModel, {}, { useColor: false })} {tagText}
+          <input
+            disabled={this.attrs.disabled}
+            onchange={async (e: InputEvent): Promise<void> => {
+              this.attrs.onBeginChange();
+
+              // Tag ID to Tag map
+              const discussionTags = (discussion.tags() as any[]).reduce((acc, tag) => {
+                acc[tag.id()] = tag;
+                return acc;
+              }, {} as Record<string, any>);
+
+              if ((e.target as HTMLInputElement).checked) {
+                discussionTags[tagModel.id()] = tagModel;
+              } else {
+                delete discussionTags[tagModel.id()];
+              }
+
+              await discussion.save({ relationships: { tags: Object.values(discussionTags) } });
+
+              this.attrs.onChangeComplete();
+            }}
+            id={uniqueId}
+            type="checkbox"
+            className="TagLabel-toggle"
+            checked={isTagEnabled}
+          />
+
+          <span class="BlomstraTagLabel-label">
+            {tagModel && tagModel.icon() && tagIcon(tagModel, {}, { useColor: false })} {tagText}
+          </span>
         </label>
       </span>
     );
