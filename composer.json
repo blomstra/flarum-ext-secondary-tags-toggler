@@ -1,0 +1,42 @@
+{
+    "name": "blomstra/secondary-tags-toggler",
+    "description": "Toggle secondary tags from the discussion hero.",
+    "keywords": [
+        "flarum"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^1.0.0",
+        "flarum/tags": "^1.0.0"
+    },
+    "require-dev": {
+        "flarum/testing": "^1.0.0"
+    },
+    "authors": [
+        {
+            "name": "David Wheatley",
+            "email": "hi@davwheat.dev",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Blomstra\\SecondaryTagsToggler\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Secondary Tags Toggler",
+            "category": "feature",
+            "icon": {
+                "name": "",
+                "backgroundColor": "",
+                "color": ""
+            },
+            "optional-dependencies": [
+              "flarum/tags"
+            ]
+        }
+    }
+}
