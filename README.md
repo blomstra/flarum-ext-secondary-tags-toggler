@@ -15,8 +15,7 @@ composer require blomstra/secondary-tags-toggler:"*"
 ## Updating
 
 ```sh
-composer update blomstra/secondary-tags-toggler:"*"
-php flarum migrate
+composer update blomstra/secondary-tags-toggler
 php flarum cache:clear
 ```
 
@@ -24,4 +23,4 @@ php flarum cache:clear
 
 - [Packagist](https://packagist.org/packages/blomstra/secondary-tags-toggler)
 - [GitHub](https://github.com/blomstra/secondary-tags-toggler)
-- [Discuss](https://discuss.flarum.org/d/PUT_DISCUSS_SLUG_HERE)
+- [Discuss](https://blomstra.community/t/secondary-tag-toggler)
