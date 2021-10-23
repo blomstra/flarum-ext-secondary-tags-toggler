@@ -1,15 +1,23 @@
 <?php
 
+/*
+ * This file is part of blomstra/secondary-tags-toggler.
+ *
+ * Copyright (c) 2021 Blomstra Ltd.
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Blomstra\SecondaryTagsToggler\Api\Controller;
 
 use Flarum\Api\Controller\AbstractListController;
 use Flarum\Http\RequestUtil;
 use Flarum\Http\UrlGenerator;
-use Psr\Http\Message\ServerRequestInterface;
-use Tobscure\JsonApi\Document;
-
 use Flarum\Tags\Api\Serializer\TagSerializer;
 use Flarum\Tags\TagRepository;
+use Psr\Http\Message\ServerRequestInterface;
+use Tobscure\JsonApi\Document;
 
 class ListSecondaryTagsController extends AbstractListController
 {
