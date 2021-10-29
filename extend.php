@@ -18,6 +18,10 @@ return [
         ->js(__DIR__.'/js/dist/forum.js')
         ->css(__DIR__.'/less/forum.less'),
 
+    (new Extend\ApiController(ShowForumController::class))
+        ->addInclude(['tags'])
+        ->prepareDataForSerialization(LoadSecondaryForumTagsRelationship::class),
+
     (new Extend\Routes('api'))
         ->get('/blomstra-secondary-tags-toggle/all-secondary-tags', 'blomstra.secondaryTagsToggle.allSecondaryTags', Api\Controller\ListSecondaryTagsController::class),
 ];

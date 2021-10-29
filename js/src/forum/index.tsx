@@ -13,16 +13,20 @@ app.initializers.add('blomstra/secondary-tags-toggler', () => {
   let allSecondaryTags: any[] | null = null;
 
   setTimeout(async () => {
-    const tags = app.store.pushPayload(
-      await app.request({
-        url: app.forum.attribute('apiUrl') + '/blomstra-secondary-tags-toggle/all-secondary-tags',
-        method: 'GET',
-      })
-    );
+    // const tags = app.store.pushPayload(
+    //   await app.request({
+    //     url: app.forum.attribute('apiUrl') + '/blomstra-secondary-tags-toggle/all-secondary-tags',
+    //     method: 'GET',
+    //   })
+    // );
 
-    delete tags.payload;
+    // delete tags.payload;
 
-    allSecondaryTags = sortTags(tags);
+    // allSecondaryTags = sortTags(tags);
+
+    // m.redraw();
+
+    allSecondaryTags = sortTags(app.store.all('tags').filter((tag: any) => tag.position() === null));
 
     m.redraw();
   }, 0);
