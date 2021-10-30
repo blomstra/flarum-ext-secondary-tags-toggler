@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Blomstra\Orion;
+namespace Blomstra\SecondaryTagsToggler;
 
 use Flarum\Api\Controller\ShowForumController;
 use Flarum\Http\RequestUtil;
 use Flarum\Tags\TagRepository;
 use Psr\Http\Message\ServerRequestInterface;
 
-class LoadAllForumTagsRelationship
+class LoadSecondaryForumTagsRelationship
 {
     /**
      * @var TagRepository

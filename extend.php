@@ -11,6 +11,7 @@
 
 namespace Blomstra\SecondaryTagsToggler;
 
+use Flarum\Api\Controller\ShowForumController;
 use Flarum\Extend;
 
 return [
