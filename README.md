@@ -4,6 +4,10 @@
 
 A [Flarum](http://flarum.org) extension. Toggle secondary tags from the discussion hero.
 
+To use, make sure you correctly set the permission in your admin dashboard. By default, only admins will be able to use this feature.
+
+![](https://u.davwheat.dev/bftoQtFF.png)
+
 ## Installation
 
 Install with composer:

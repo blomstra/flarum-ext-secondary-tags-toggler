@@ -1,0 +1,4 @@
+blomstra-secondary-tags-toggler:
+  admin:
+    permissions:
+      view_toggler: Use secondary tags toggler on discussions
