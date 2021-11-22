@@ -31,3 +31,7 @@ app.initializers.add('blomstra/secondary-tags-toggler', () => {
     items.add('secondaryTagsToggle', <ToggleableTagLabelList allSecondaryTags={allSecondaryTags} discussion={discussion} />, 4);
   });
 });
+
+import * as components from './components';
+
+export { components };
