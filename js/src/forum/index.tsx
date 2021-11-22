@@ -9,7 +9,7 @@ import Model from 'flarum/common/Model';
 
 import sortTags from 'flarum/tags/utils/sortTags';
 
-import ToggleableTagLabelSet from './components/ToggleableTagLabelList';
+import ToggleableTagLabelList from './components/ToggleableTagLabelList';
 
 app.initializers.add('blomstra/secondary-tags-toggler', () => {
   Discussion.prototype.canViewSecondaryTagToggler = Model.attribute('canViewSecondaryTagToggler');
@@ -28,6 +28,10 @@ app.initializers.add('blomstra/secondary-tags-toggler', () => {
     if (!discussion.canViewSecondaryTagToggler() || !discussion.canTag()) return;
     if (!allSecondaryTags) return;
 
-    items.add('secondaryTagsToggle', <ToggleableTagLabelSet allSecondaryTags={allSecondaryTags} discussion={discussion} />, 4);
+    items.add('secondaryTagsToggle', <ToggleableTagLabelList allSecondaryTags={allSecondaryTags} discussion={discussion} />, 4);
   });
 });
+
+import * as components from './components';
+
+export { components };

@@ -10,7 +10,7 @@ interface IState {
   disabled: boolean;
 }
 
-export default class ToggleableTagLabelSet extends Component<IAttrs, IState> {
+export default class ToggleableTagLabelList extends Component<IAttrs, IState> {
   state = {
     disabled: false,
   };
