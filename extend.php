@@ -37,4 +37,7 @@ return [
 
     (new Extend\Routes('api'))
         ->get('/blomstra-secondary-tags-toggle/all-secondary-tags', 'blomstra.secondaryTagsToggle.allSecondaryTags', Api\Controller\ListSecondaryTagsController::class),
+
+    (new Extend\Settings())
+        ->serializeToForum('blomstra-secondary-tag-toggler.only_one_secondary_tag', 'blomstra-secondary-tag-toggler.only_one_secondary_tag', 'boolval', false)
 ];
