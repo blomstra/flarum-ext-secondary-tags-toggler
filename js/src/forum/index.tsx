@@ -16,9 +16,8 @@ app.initializers.add('blomstra/secondary-tags-toggler', () => {
 
   let allSecondaryTags: any[] | null = null;
 
-  setTimeout(async () => {
+  setTimeout(() => {
     allSecondaryTags = sortTags(app.store.all('tags').filter((tag: any) => tag.position() === null && tag.canAddToDiscussion()));
-
     m.redraw();
   }, 0);
 

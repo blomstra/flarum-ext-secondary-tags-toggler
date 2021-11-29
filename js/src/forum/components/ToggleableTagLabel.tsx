@@ -80,6 +80,18 @@ export default class ToggleableTagLabel extends Component<IAttrs> {
 
               if ((e.target as HTMLInputElement).checked) {
                 discussionTags[tagModel.id()] = tagModel;
+
+                if (this.oneSecondaryTagOnly) {
+                  // Deselect all other secondary tags
+                  Object.keys(discussionTags).forEach((tagId) => {
+                    const tag = app.store.getById('tags', tagId);
+
+                    // If secondary and not the one we're adding
+                    if (tag.position() === null && tag.id() !== tagModel.id()) {
+                      delete discussionTags[tag.id()];
+                    }
+                  });
+                }
               } else {
                 delete discussionTags[tagModel.id()];
               }
@@ -100,5 +112,9 @@ export default class ToggleableTagLabel extends Component<IAttrs> {
         </label>
       </span>
     );
+  }
+
+  get oneSecondaryTagOnly(): boolean {
+    return app.forum.attribute('blomstra-secondary-tag-toggler.only_one_secondary_tag');
   }
 }
