@@ -32,7 +32,7 @@ return [
 
     (new Extend\ApiSerializer(DiscussionSerializer::class))
         ->attribute('canViewSecondaryTagToggler', function (DiscussionSerializer $serializer, Discussion $model) {
-            return $serializer->getActor()->can('discussion.viewSecondaryTagsToggler', $model);
+            return $serializer->getActor()->can('viewSecondaryTagsToggler', $model);
         }),
 
     (new Extend\Routes('api'))
