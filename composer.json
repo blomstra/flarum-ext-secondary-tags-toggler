@@ -18,8 +18,8 @@
     },
     "authors": [
         {
-            "name": "David Wheatley",
-            "email": "hi@davwheat.dev",
+            "name": "Team Blomstra",
+            "email": "development@blomstra.net",
             "role": "Developer"
         }
     ],
@@ -38,7 +38,7 @@
                 "color": "#3a98d0"
             },
             "optional-dependencies": [
-              "flarum/tags"
+                "flarum/tags"
             ]
         }
     }
